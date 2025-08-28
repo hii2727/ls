@@ -13,7 +13,6 @@ body {
     height: 100vh;
     width: 100%;
     z-index: 1;
-    
 }
 
 section {
@@ -51,15 +50,13 @@ body, html {
 }
 
 .container {
-    width: 700px;   /* Increase width */
-    height: 600px;  /* Increase height */
-    /* ...other styles... */
+    width: 700px;   /* desktop size */
+    height: 600px;
 }
 
 .image-box {
     width: 100%;
     height: 100%;
-    /* ...other styles... */
 }
 .actual-image {
     height: 80%;
@@ -131,7 +128,7 @@ a {
     font-size: 7vh;
 }
 
-/* for mobile display */
+/* mobile */
 @media (min-width:200px) and (max-width:1025px) {
     .container {
         height: 80%;
@@ -141,26 +138,4 @@ a {
         height: 90%;
         width: 80%;
     }
-}
-
-/* Floating fullscreen button */
-.fullscreen-btn {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  font-size: 2rem;
-  background: #FB607F;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-  z-index: 99999;
-  transition: transform 0.2s ease;
-}
-
-.fullscreen-btn:hover {
-  transform: scale(1.1);
 }
