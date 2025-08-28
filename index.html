@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <!-- 👇 important: allow safe-area insets -->
+  <!-- 👇 allows proper fullscreen safe-area -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <link rel="icon" href="resources/fav.png">
   <title>喜欢你la stupid</title>
@@ -27,13 +27,29 @@
           </p>
         </div>
       </div>
-    </div>
-    <!-- 👇 moved outside container -->
-    <div class="yes-no">
-      <button class="yes" id="yes">Yes</button>
-      <button class="no" id="no">No</button>
+      <div class="yes-no">
+        <button class="yes" id="yes">Yes</button>
+        <button class="no" id="no">No</button>
+      </div>
     </div>
   </section>
+
+  <!-- ❤️ Fullscreen Button -->
+  <button id="fullscreenBtn" class="fullscreen-btn">❤️</button>
+
   <script src="app.js"></script>
+  <script>
+    const fsBtn = document.getElementById("fullscreenBtn");
+    fsBtn.addEventListener("click", () => {
+      const elem = document.documentElement;
+      if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch(err => {
+          alert(`Error: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    });
+  </script>
 </body>
 </html>
