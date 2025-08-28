@@ -13,6 +13,7 @@ body {
     height: 100vh;
     width: 100%;
     z-index: 1;
+    
 }
 
 section {
@@ -43,22 +44,23 @@ body, html {
 }
 
 .video-background video {
-    display: none;  /* YES 点击时用 JS 切换为 block */
+    display: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 .container {
-    width: 700px;
-    height: 600px;
+    width: 700px;   /* Increase width */
+    height: 600px;  /* Increase height */
+    /* ...other styles... */
 }
 
 .image-box {
     width: 100%;
     height: 100%;
+    /* ...other styles... */
 }
-
 .actual-image {
     height: 80%;
     width: 100%;
@@ -129,7 +131,7 @@ a {
     font-size: 7vh;
 }
 
-/* mobile */
+/* for mobile display */
 @media (min-width:200px) and (max-width:1025px) {
     .container {
         height: 80%;
@@ -141,3 +143,24 @@ a {
     }
 }
 
+/* Floating fullscreen button */
+.fullscreen-btn {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  font-size: 2rem;
+  background: #FB607F;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  z-index: 99999;
+  transition: transform 0.2s ease;
+}
+
+.fullscreen-btn:hover {
+  transform: scale(1.1);
+}
