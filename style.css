@@ -139,4 +139,27 @@ a {
         font-size: 5vh;
     }
 }
+section {
+  min-height: 100svh;             /* instead of 100%/100vh */
+}
+
+/* 2) Make the main container size with the stable viewport */
+.container {
+  height: min(88svh, 600px);      /* was fixed 600px/85vh */
+}
+
+/* 3) Keep buttons above everything and clear the bottom safe area */
+.yes-no {
+  z-index: 10;                     /* ensure above background video */
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
+  margin-bottom: 0;                /* override any previous margin */
+}
+
+/* 4) Extra safety on small phones */
+@media (max-width: 768px) {
+  section { min-height: 100svh; }
+  .container { height: 90svh; }
+  .yes, .no { font-size: 5.5vh; }  /* keep buttons tappable but not too tall */
+}
+
 
