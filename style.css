@@ -148,6 +148,37 @@ a {
         font-size: 5vh;
     }
 }
+.fullscreen-btn {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  font-size: 1.6rem;
+  background: #FB607F;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  z-index: 99999;
+  transition: transform 0.2s ease;
+}
+
+.fullscreen-btn::before {
+  content: "❤️";
+  font-size: 1.4rem;
+}
+
+/* When fullscreen is active → show ❌ */
+.fullscreen-btn.active::before {
+  content: "❌";
+}
+
+.fullscreen-btn:hover {
+  transform: scale(1.1);
+}
+
 
 
 
